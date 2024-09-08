@@ -7,6 +7,8 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { messages } from 'app/pages/HomePage/messages'
 import { User } from 'types'
+import { ModalDialog } from 'app/components/modules/ModalDialog'
+import { useModalDialog } from 'app/components/modules/ModalDialog/hook'
 
 /**
  * @returns Component Home Page
@@ -14,6 +16,7 @@ import { User } from 'types'
 export function HomePage() {
   const { t } = useTranslation()
   const [users, setUsers] = useState<User[]>([])
+  const { showModalDialog } = useModalDialog()
 
   useEffect(() => {
     fetchUsers()
@@ -34,6 +37,7 @@ export function HomePage() {
       <div>
         <Title>Hello World</Title>
         <ButtonStyled>{t(messages.routingTitle())}</ButtonStyled>
+        <ButtonStyled onClick={() => showModalDialog('modal')}>Open Modal</ButtonStyled>
       </div>
       <p>{t(messages.routingDescription())}</p>
       <div>
@@ -44,6 +48,13 @@ export function HomePage() {
           ))}
         </div>
       </div>
+      <ModalDialog name="modal">
+        {({ closeMain, closeSub }) => {
+          console.log({ closeMain, closeSub })
+
+          return <div>modal</div>
+        }}
+      </ModalDialog>
     </Wrapper>
   )
 }

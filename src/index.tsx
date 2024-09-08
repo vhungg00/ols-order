@@ -9,6 +9,7 @@ import { App } from 'app'
 import { configureAxios } from 'configureAxios'
 import { store } from 'store'
 import { theme } from 'theme'
+import { ModalDialogProvider } from 'app/components/modules/ModalDialog/ModalDialogProvider'
 
 // Use consistent styling
 import 'sanitize.css/sanitize.css'
@@ -31,7 +32,9 @@ root.render(
     <ChakraProvider theme={theme}>
       <PersistGate loading={null} persistor={persistor}>
         <HelmetProvider>
-          <App />
+          <ModalDialogProvider>
+            <App />
+          </ModalDialogProvider>
         </HelmetProvider>
       </PersistGate>
     </ChakraProvider>

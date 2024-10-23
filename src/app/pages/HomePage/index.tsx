@@ -4,9 +4,8 @@ import { Button } from '@chakra-ui/react'
 import { Helmet } from 'react-helmet-async'
 import axios from 'axios'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
-import { messages } from 'app/pages/HomePage/messages'
 import { User } from 'types'
+import ProductList from './components/elements/ProductList'
 
 /**
  * @returns Component Home Page
@@ -32,6 +31,7 @@ export function HomePage() {
         <meta content="A Boilerplate application homepage" name="description" />
       </Helmet>
       <div>heelo</div>
+      <ProductList />
     </Wrapper>
   )
 }

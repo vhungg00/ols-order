@@ -31,37 +31,11 @@ export function HomePage() {
         <title>Home Page</title>
         <meta content="A Boilerplate application homepage" name="description" />
       </Helmet>
-      <div>
-        <Title>Hello World</Title>
-        <ButtonStyled>{t(messages.routingTitle())}</ButtonStyled>
-      </div>
-      <p>{t(messages.routingDescription())}</p>
-      <div>
-        <h2>List user</h2>
-        <div>
-          {users.map((user: User) => (
-            <div key={user.id}>{user.name}</div>
-          ))}
-        </div>
-      </div>
+      <div>heelo</div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 320px;
+  flex: 1;
 `
-
-const Title = styled.h1`
-  text-align: center;
-`
-
-const ButtonStyled = styled(Button)(({ theme }) => {
-  return css`
-    background-color: ${theme.colors.blue['500']};
-  `
-})

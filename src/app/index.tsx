@@ -7,24 +7,22 @@
  */
 
 import { Helmet } from 'react-helmet-async'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import { GlobalStyle } from 'styles/global-styles'
 import { useTranslation } from 'react-i18next'
+import { routesUsers } from './routes/user'
 
-import { HomePage } from 'app/pages/HomePage'
-import { TodosPage } from 'app/pages/TodosPage'
-import { NotFoundPage } from 'app/pages/NotFoundPage'
+const routes = createBrowserRouter([...routesUsers])
 
 /**
- *
  * Routers for app
- *
  * */
 export function App() {
   const { i18n } = useTranslation()
+
   return (
-    <BrowserRouter>
+    <>
       <Helmet
         defaultTitle="React Boilerplate"
         htmlAttributes={{ lang: i18n.language }}
@@ -33,12 +31,8 @@ export function App() {
         <meta content="A React Boilerplate application" name="description" />
       </Helmet>
 
-      <Routes>
-        <Route element={<HomePage />} path="/" />
-        <Route element={<TodosPage />} path="/todos" />
-        <Route element={<NotFoundPage />} path="*" />
-      </Routes>
+      <RouterProvider router={routes} />
       <GlobalStyle />
-    </BrowserRouter>
+    </>
   )
 }

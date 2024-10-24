@@ -25,5 +25,6 @@ const LayoutWrapper = styled('div')`
     flex-direction: column;
     flex: 1;
     width: 100%;
+    min-height: 100dvh;
     background-color: ${({ theme }) => theme.colors.white}}
 `

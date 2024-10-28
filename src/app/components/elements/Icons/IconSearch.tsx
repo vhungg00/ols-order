@@ -5,7 +5,7 @@ export const IconSearch = (props: IconProps) => (
     <g
       transform="translate(1 1)"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
       fill="none"
       fillRule="evenodd"
       strokeLinecap="square"

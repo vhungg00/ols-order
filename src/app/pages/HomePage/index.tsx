@@ -30,7 +30,7 @@ export function HomePage() {
         <title>Home Page</title>
         <meta content="A Boilerplate application homepage" name="description" />
       </Helmet>
-      <div>heelo</div>
+      <div style={{height: '1500px'}}>heelo</div>
       <ProductList />
     </Wrapper>
   )
